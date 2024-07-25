@@ -53,12 +53,11 @@ public class LinkedListNode {
         LinkedListNode prevNode = null;
         LinkedListNode nextNode = null;
 
+        nextNode = head.next;
+
         while (head.next != null){
-            nextNode = head.next;
-            head.next = prevNode;
-            prevNode = head;
             head = nextNode;
-            nextNode.next = prevNode;
+            head.next = prevNode;
 
             System.out.println("nextNode = " + nextNode.data);
             System.out.print("\n");

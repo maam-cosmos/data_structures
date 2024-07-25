@@ -9,6 +9,6 @@ public class App {
         head.insertAtTheEnd(head, 5);
         head.insertAtTheEnd(head, 6);
 
-        head.reverseLinkedList(head);
+        //head.reverseLinkedList(head);
     }
 }
