@@ -50,16 +50,26 @@ public class LinkedListNode {
 
     public void reverseLinkedList (LinkedListNode head){
 
+        // Write code below to check whether the list is empty or 
+        // has only one node. Because in that case, nothing to reverse. 
+                
         LinkedListNode prevNode = null;
         LinkedListNode nextNode = null;
 
         nextNode = head.next;
-
+        
+        // Checking nextNode because we can use head here as then head will be null and
+        // will not point to the head of the list anymore. Also, null node will be 
+        // connected to the head node. For example, if head was used to check the 
+        // condition instead of another reference like the nextNode, then the list 
+        // would become like null<-1<-2<-3<-4<-5<-6<-null. In order to remove the pointer
+        // to the null node after the last node 6, another reference node is use which 
+        // is nextNode. 
         while (nextNode != null){
             head.next = prevNode;
-            prevNode = head;       // 1 2
-            head = nextNode;       // 2 3
-            nextNode = head.next;  // 3 4
+            prevNode = head;       // 1 2 3 4
+            head = nextNode;       // 2 3 4 5
+            nextNode = head.next;  // 3 4 5 6
             head.next = prevNode;
         }
         
