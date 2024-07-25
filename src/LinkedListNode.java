@@ -55,12 +55,12 @@ public class LinkedListNode {
 
         nextNode = head.next;
 
-        while (head.next != null){
-            head = nextNode;
+        while (nextNode != null){
             head.next = prevNode;
-
-            System.out.println("nextNode = " + nextNode.data);
-            System.out.print("\n");
+            prevNode = head;       // 1 2
+            head = nextNode;       // 2 3
+            nextNode = head.next;  // 3 4
+            head.next = prevNode;
         }
         
         System.out.println("After reversing the linked list, ");
