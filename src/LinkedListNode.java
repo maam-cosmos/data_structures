@@ -23,6 +23,17 @@ public class LinkedListNode {
         System.out.println("\n");
     }
 
+    public int linkedListLength (LinkedListNode head){
+
+        int length = 0;
+
+        while (head !=null) {
+            length++;
+            head = head.next;
+        }
+        return length;
+    }
+
     public void insertAtTheEnd(LinkedListNode head, int data) {
 
         LinkedListNode newNode = new LinkedListNode(data);
